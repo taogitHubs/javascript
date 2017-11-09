@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //do {
+        //    //提示用户输入整数
+        //    var str = prompt("请输入整数");
+        //    //判断用户输入的值，非数值则继续提醒输入
+        //} while (isNaN(str));
+        ////获取输入的字符串的长度并弹窗
+        //alert(("你输入了" + str.length + "为数字"));
+//
+        ////倒着打印用户输入的数值(思考)
+        ////字符串变成数组
+        //var arr = str.split('');
+        ////定义一个变量
+        //var i = 0;
+        ////定义循环，只需要遍历数组长度的一般次数即可
+        ////设置循环中止条件,考虑到数组长度为奇数，所以初始值小于等于数组长度的一半减1停止
+        //while (i <= arr.length / 2 - 1) {
+        //    //交换首尾的数组元素
+        //    var temp = arr[i];
+        //    arr[i] = arr[arr.length - i - 1];
+        //    arr[arr.length - i - 1] = temp;
+        //    //递增变量来控制循环次数
+        //    i++;
+        //}
+        ////转成字符串弹出窗口
+        //alert(arr.toString());
+        var shu = prompt("请输入一个数值:");
+        document.write( String(shu));
+        document.write("<br/>");
+        var arr = String(shu);
+        for(var i = arr.length-1; i>=0;i--) {
+            document.write(arr[i]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

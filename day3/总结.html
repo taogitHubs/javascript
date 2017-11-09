@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+    //1.数组的创建方式
+        //        var arr=new Array(99,97,95,98);
+        //        console.log(arr);
+    //2.数组的长度
+        //数组中元素的个数
+        //        var arr=[98,65,96,33,45,25,25,96,58]
+        //        console.log(arr.length);
+    //3.数组的索引
+        //作用：用于准确的获取或设置数组中的某个元素
+        //从0开始依次递增
+        //        var arr=[98,96,85,72,63,85,96,85,]
+        //        console.log(arr[2]);
+    //4.数组内部的数据类型
+        //数组内部可以存储多个数据类型
+        //但不推荐，因为多数据处理可能会照成不必要的影响
+        //数组中的元素又称为数组元素
+        //        var arr=["fsd",549,5,null,undefined,true];
+        //        console.log(arr);
+    //5.长度和索引的使用
+        // var arr = ["a", "b", "c", "d", "e", "e"];
+        // console.log(arr[2]);//通过索引获取对应的值
+        // console.log(arr.length);//长度
+        // arr[3]="z"//通过索引更改数组中的某一个值
+        // console.log(arr);
+        //   5.1设置数组的长度属性
+        // var arr=[1,2,3,5];
+        // arr.length=7;
+        //console.log(arr);
+        //数组的长度会改变但不会出现新元素多余的位置为undefined
+        //当长度值小于数组的元素个数时设置数组长度
+        //var arr=[4,5,6,8,9,8,7];
+        //arr.length=3;
+        //console.log(arr);//此时多余的数会被删除
+        //arr.length=5;
+        //console.log(arr);//当再次把长度改回来时多余的数为undefined
+        ////清空数组arr.length=0;
+        ////      arr=[];
+        ////设置数组默认长度，但不上限,实际上没有意义
+        //var arr=new Array(3);
+        //console.log(arr.length);//此时长度为3
+        //arr[0]="a";
+        //arr[1]="b";
+        //arr[2]="c";
+        //arr[3]="d";
+        //arr[4]="e";
+        //console.log(arr);//结果为["a","b","c","d","e"];
+    //6.undefined的出现场景
+        ////6.1变量申明未赋值
+        //var num;
+        //console.log(num);
+        ////6.2访问数组中不存在的元素
+        //var arr=["a","b"];
+        //console.log(arr[10]);
+    //7数组的遍历
+        //打印数组中的每一个元素
+        //var arr=["a","b","c","d","e","f","g","h"];
+        ////1.用for循环，获取出递增的索引值
+        //for (var i = 0; i <arr.length; i++) {
+        //    //console.log(i);
+        //    //2.根据得到的索引获取数组中的每个元素
+        //    console.log(arr[i]);
+        //}
+        //反向打印数组中的每个元素？
+        //var arr=["a","b","c"];
+        ////用for循环获取数组的反向遍历然后打印
+        //for (var i = arr.length-1; i>=0; i--) {
+        //    console.log(arr[i]);
+        //}
+    //8.数组的长度和索引之间的关系
+        //var arr =[1,2,3,5]
+        //数组的最后一个索引为3数组的长多为4，arr[4]可给数组新添加一个元素
+        //结论：
+        //数组的最后一个元素的索引值可以用arr.length-1来表示
+        //给数组新加一个元素可以用arr[arr.length]= 来实现
+    // 9. 练习题
+        //求一组数中的所有数的和还有平均值
+            //var arr=[1,2,3,6,4,5,7,8];
+            ////定义一个变量来存放平均值
+            //var sum=0;
+            ////获取数组中的每一个数
+            //for (var i = 0; i < arr.length; i++) {
+            ////计算数组中全部数的和
+            //    sum=arr[i]+sum;
+            //}
+            ////输出和和平均值
+            //console.log(sum,sum/arr.length);
+        //将1-100之间所有整数放入数组中
+            ////定义一个空的数组
+            //var arr=[];
+            ////获取1到一百内的所有的数
+            //for (var i = 0; i <100; i++) {
+            ////把数据放入数组中
+            //    arr[i]=i+1;
+            //}
+            // console.log(arr);
+        //将1-100之间可以被三整除的数放入到数组中
+            ////定义一个空的数组
+            //var arr = [];
+            ////获取1到一百内的所有的数
+            //for (var i = 1; i <=100; i++) {
+            ////判断是否能整除3
+            //    if (i % 3 == 0) {
+            ////把能整除的数放入数组
+            //        arr[arr.length]=i;
+            //    }
+            //}
+            //console.log(arr);
+        //求一组数中的最大值
+            //var arr=[13, 4, 7, 4, 2, 1, 4, 7, 9, 11, 3];
+            ////定义一个变量来放最大值，变量的值定义为数组中的元素
+            //var max=arr[0];
+            ////获取数组中的每一个元素
+            //for (var i = 0; i <arr.length; i++) {
+            ////判断大小
+            //    if(arr[i]>max){
+            ////比max大的则赋值给max
+            //        max=arr[i];
+            //    }
+            //}
+        //console.log(max);
+            //求一个数组中的最小值以及其所在位置
+            //var arr=[13, 4, 0, 4, 2, 1, 4, 7, 9, 11, 3];
+            ////定义一个变量来放最大值，变量的值定义为数组中的元素
+            //var min =arr[0];
+            ////定义一个变量来记录索引
+            //var n=1;
+            ////获取数组的遍历
+            //for (var i = 0; i <arr.length; i++) {
+            ////比较大小
+            //    if(arr[i]<min){
+            ////比min小的则赋值给min
+            //        min=arr[i];
+            ////记录最小值的索引
+            //        n=i;
+            //    }
+            //}
+            //console.log(min,n);
+        //将字符串数组用|或其他符号分割
+            //var arr = ["张三", "李四", "王五", "赵六"];
+            ////定义一个数组来存放新数组
+            //var temp = arr[0];
+            //var count = "|";//存放分隔符
+            //for (var i = 1; i < arr.length; i++) {
+            //    temp += count + arr[i];//对数组元素进行拼接
+            //}
+            //console.log(temp);
+        //要求将数组中不为0的值存入一个新的数组，生成新的数组
+            //var arr=[1, 0, 0, 4, 2, 0, 7, 8, 0, 9, 3, 0, 5, 1, 2];
+            ////定义一个数组来存放新数组
+            //var arr1=[];
+            //for (var i = 0; i <arr.length; i++) {
+            ////判断是否为0
+            //    if(arr[i]!=0){
+            //        //放入到arr1
+            //        arr1[arr1.length]=arr[i];
+            //    }
+            //}
+            //console.log(arr1);
+        //翻转数组
+            //方法一:定义一个新数组，在新数组上输出
+                //var arr=["a","b","c","d"];
+                ////定义一个数组来存放新数组
+                //var arr1=[];
+                ////反向遍历
+                //for (var i = arr.length-1; i >=0 ; i--) {
+                //    arr1[arr1.length]=arr[i];
+                //}
+                //console.log(arr1);
+            //方法二:在自身进行转换
+                //var arr=["a","b","c","d","e"];
+                ////遍历数组arr，将数组arr的首尾数据进行交换
+                //for (var i = 0; i <= arr.length/2-1; i++) {//条件也可用i < parseInt(arr.length / 2)
+                //        //交换两个位置的元素：
+                //        var temp=arr[i];
+                //        arr[i]=arr[arr.length-i-1];
+                //        arr[arr.length-i-1]=temp;
+                //}
+                //console.log(arr);
+        //10.冒泡排序，从小到大
+               //var arr = [5, 7, 4, 8, 3, 6, 2, 9, 1];
+               ////控制要比较的轮数
+               //for (var i = 1; i < arr.length; i++) {
+               //    //控制每轮比较的次数
+               //    for (var n = 0; n <arr.length-i; n++) {
+               //        //比较大小,如果后一项大则将前一项与后一项交换位置
+               //        if(arr[n]>arr[n+1]){
+               //            var temp=arr[n];
+               //            arr[n]=arr[n+1];
+               //            arr[n+1]=temp;
+               //        }
+               //    }
+               //}
+               //console.log(arr);
+            //优化后的代码
+                var arr = [1,2,3,5,4];
+                //观察发现此代码只需要比較一轮排序完毕了
+                //则需要在排序过程中进行中断，如果某一轮执行时发现已经排序完毕，直接结束即可
+
+                //外部循环
+                for (var i = 1; i < arr.length; i++) {
+                    var count=0;//用于记录本轮中，发生交换的次数
+                    for (var j = 0; j < arr.length-i; j++) {
+                        //如果某次比较中发现count=0；则说明排序完成
+                        if(arr[j]>arr[j+1]){
+                            var temp=arr[j];
+                            arr[j]=arr[j+1];
+                            arr[j+1]=temp;
+                            count++;//记录进入if语句中的次数
+                        }
+                    }
+                    //判断count是否等于0如果等于则跳出循环
+                    if(count ==0){
+                        break;//跳出循环
+                    }
+                }
+                console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

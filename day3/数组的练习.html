@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //求一组数中的所有数的和还有平均值
+        //var arr = [6, 5, 3, 7, 8, 9, 1, 3, 6, 3, 3, 1];
+        //var sum=0;
+        //for (var i=0; i<arr.length;i++){
+        //    sum+=arr[i];
+        //}
+        //console.log(sum);
+        //console.log(sum / arr.length);
+        //把1-100所有的数放入数组中
+        //var arr=[];
+        //for(var i=1;i<=100;i++){
+        //   // arr[i-1]=i;
+        //    arr[arr.length]=i;
+        //}
+        //console.log(arr);
+        //求一组数中的最小值，以及所在位置(取出最小值的索引值)
+        //var arr = [1, 2, 3, 6, 4, 5, 7, -5, 9, 87, 0, 8, 2];
+        //var min = arr[0];
+        //var n = 0;
+        //for (var i = 1; i <= arr.length; i++) {
+        //    if (min > arr[i]) {
+        //        min = arr[i];
+        //        n = i;
+        //    }
+        //}
+        //console.log(min, n);
+        //var arr=["张三","李四","王五","赵六"];
+        //var resul=arr[0];
+        //var fenGeFu="|";
+        //for (var i = 1; i < arr.length; i++) {
+        //    resul +=fenGeFu +arr[i];
+        //}
+        //console.log(resul);
+        //        var arr=["a","b","c","d","e"];
+        //        var fz=[];
+        //        for (var i = arr.length-1; i >=0; i--) {
+        //            fz[fz.length]=arr[i];
+        //        }
+        //        console.log(fz);
+        //var arr = ["a", "b", "c", "d", "e"];
+        //var count = 0;
+        //for (var i = 0; i < parseInt(arr.length / 2); i++) {
+        //    var temp = arr[i];
+        //    arr[i] = arr[arr.length - 1 - i];
+        //    arr[arr.length - 1 - i] = temp;
+        //    count++;
+        //}
+        //console.log(arr, count);
+        var arr = [1,5,2,3,6,4,7,8,9];
+        //控制比较的次数
+        for (var i = 1; i < arr.length; i++) {
+            //控制每次比较的次数
+            for (var j = 0; j < arr.length-i; j++) {
+                //比较大小
+                if (arr[j] > arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

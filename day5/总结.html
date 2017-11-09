@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+        预解析：预解析在每个作用域开启前均会发生
+            1 查找当前作用域中的var变量声明，将变量的声明提升到当前作用域顶端(变量提升),赋值保留在原地
+            2 查找当前作用域中的function函数声明语句，将函数体整体提升到当前作用域顶端,调用保留在原地
+        函数的重名：js中函数不允许重名，如果重名那么后一个函数会覆盖前一个函数
+        变量和函数重名：变量和函数重名取决于变量，如果变量有值则取变量值
+                        如果变量没值则取函数值
+        函数的重载：argument 操作用户当前传入的所有实参
+                    用法：和数组用法基本相同，但数组使用的方法不能使用
+                    function fun(){
+                        if(arguments.length==2){
+                            console.log("实现2个参数的功能");
+                        }else if (arguments.length == 3) {
+                            console.log("实现3个参数的功能");
+                        }
+                    }
+                    fun(1,2);    fun(1,2,3);
+        函数的传递方式：1.如果传入的参数是基本数据类型，实参和形参不会相互影响
+                        2.如果传入的是复杂数据类型，实参和形参就是一个数据，一起变化
+                        3.如果传入的数据为复杂数据类型，并且在函数执行功能中更改了形参，则不需要设置返回值
+                        4.如果结果不是传入的数组而是另外一个值，则需要设置返回值
+        函数的类型：typeof 函数名
+                    函数也是一种数据类型，函数是用来保存一段代码的
+                    其他数据类型都是保存值
+        函数的多种申明方式：function fun(){}
+                            函数表达式：var fun=function(){}
+                                        函数表达式无法在声明之前进行调用
+                                        保存在变量fun中的函数称为匿名函数（没有名字的函数）
+                            匿名函数 (function (){
+                                        函数代码
+                                        })();
+                                       只能在书写位置执行一次
+                                        作用：用于对作用域进行包裹，减少全局变量的使用
+                                        减少命名的使用，降低命名的难度
+        将函数作为参数使用 （回调函数）fun();
+                           fun=函数名
+
+
+        对象
+        抽象和具体
+        特征和行为(属性和方法)
+        创建方式 var 对象名 =new Object()
+                对象名.属性名=值；
+                对象名.方法名=function(){}
+        使用函数创建多个对象：
+                function hanshu(name,age){
+                    1.创建对象
+                    var obj=new Object();
+                    2.添加属性方法
+                    obj.name=name;
+                    obj.age=age;
+                    obj.fangFa=function(){}
+                    3.设置返回值
+                    return obj;
+                }
+                var temp= hanshu("张三",18);
+                var temp1= hanshu("张三",18);
+                console.log(temp1);
+                console.log(temp);
+        构造函数的使用：
+                    new 帮我们做了2件事，创建对象与返回对象
+                    var temp=new hanshu("张三",20)
+                    function hanshu(name,age){
+                            this.name=name;
+                            this.age=age;
+                            this.fangfa=function(){}
+                    }
+                    console.log(temp);//访问属性
+                    temp.fangfa();//调用方法
+                new的作用：
+                        1 创建对象
+                        2 返回对象
+                        3 将函数内的this指向创建的对象
+                书写时的注意点:
+                        1 构造函数的首字母大写
+                        2 调用前加new
+                        3 构造函数内只需要通过this添加属性方法即可
+                构造函数的特殊使用：
+                    1 基本数据类型:没有效果，这个返回值会被忽略
+                    return false;
+                    2 复杂数据类型:会将原有的返回的对象进行替换
+                    return [1,2,3];
+            this的使用
+                1 使用场景：正常情况下，需要在方法中使用才有意义
+                2 作用：指向函数调用者(指向当前方法属于的那个对象)
+                3.构造函数中的this指向为特殊的使用方式，原因是new将this的指向修改了。
+                4.如果在一个普通的函数中使用了this，会指向js的顶级对象window
+         对象的新创建方式：
+            对象字面量创建方式：
+                    var obj{
+                    name:"张三",
+                    age:18,
+                    fangfa:function(){
+                        console.log("我是张三");
+                    }
+                    }
+                    obj.height=180;//添加
+                    console.log(obj.name);//张三
+                    obj.fangfa();//我是张三
+            以下代码为对象属性的两种访问方式：
+                //console.log(duiXiang.name);
+                //console.log(duiXiang["name"]);
+            对象的遍历
+                for(k in obj){
+                console.log(k)//属性名-字符串类型
+                console.log(obj[k])//属性值
+                }//输出对象的遍历
+            JSON 一种数据交换格式
+            书写方法一对象字面量几乎相同，区别是属性名要加双引号。
+            JSON中通常不使用函数
+            var json={
+            "name":"张三",
+            "age":18,
+            "sex":"男"
+            };
+            传入一个对象结构的JSON数据，可以返回字符串结构的JSON数据
+            console.log(JSON.stringify(json));
+            可以将一个JSON字符串形式转换为JSON的对象形式
+            console.log(JSON.parse(json))//注意属性名必须加"",否则没有作用
+
+    <script>
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

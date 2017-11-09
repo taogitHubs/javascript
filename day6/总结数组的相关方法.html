@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    内置对象
+    Math对象
+    Math.PI 圆周率的值
+    Math.ceil();向上取整
+    Math.floor();向下取整
+    Math.round();四舍五入
+
+    Math.max()最大值
+    Math.min();最小值
+
+    Math.abs()取绝对值
+    Math.pow(2,3);取2的3次方
+    Math.sqrt(4)开4的2次方
+
+    Math.sin();正弦函数
+    Math.cos();余弦函数
+    Math.tan();正切函数
+
+    小数的加减计算精度问题
+        在进行小数计算操作时，不要进行加减运算，可以通过倍数扩大的方式解决
+    Math.random()//取随机数从0到一取0不取1
+
+    数组的方法是通过new Array()或者[]创建的具体的数据进行使用的
+        数组的基本操作方法
+            arr.push(item1,item2...)
+            向数组的最后添加n个元素 放入的顺序与书写顺序一致，可以修改原数组
+            返回值为新数组的长度
+            arr.pop()
+            从数组的最后删除一个元素
+            并且将这个删除的元素返回，可以修改原数组
+            arr.unshift(item1,item2....)
+            按照书写顺序将参数添加到数组的最前面,可以修改原数组
+            返回添加元素后数组的新长度
+            arr.shift()
+            从数组最前面删除一个元素
+            返回删除掉的元素，修改原数组
+            arr.concat(item1,item2.....)
+            不会修改原数组，而是将操作的结果新数组返回
+            作用，用于数组连接(将数组的元素进行合并，变成一个数组
+            arr.slice(start,end)
+            start表示起始位置索引值，end结束位置索引值,end位置的值不含
+            用于对数组中的元素进行拷贝
+            不修改原数组，返回拷贝的内容（数组形式）
+            arr.splice(start,len);
+            start表示起始位置索引值，len表示要截取的元素个数
+            用于对数组中的部分元素进行截取
+            修改原数组，返回截取的部分
+            splice的第二种使用方式:截取并替换为新内容
+            如果传入的参数多于2个，多余的参数会被添加到截取位置上
+            indexOf()
+            用于查找数组中指定元素值的索引
+            参数1 要检测的元素的值  参数2(可选) 检测的起始位置索引值，默认值为0
+            arr.reverse() 翻转数组
+            可以修改原数组,返回值与原数组是同一个数组，所以不需要接收
+            arr.sort();
+            对字符串数组也可以进行排序操作，顺序为a-z，按照首字母排序
+
+            升序参数  function(a,b){return a-b;};
+            arr.sort(function (a, b) {
+              return a - b;
+            });
+            console.log(arr);
+
+            降序参数  function(a,b){return b-a;};
+            arr.sort(function (a, b) {
+            return b - a;
+            });
+            console.log(arr);
+
+            arr.toString()
+            结果为逗号连接的每个元素组成的字符串
+
+            arr.join()
+            如果不传入参数，结果与toString是相同的
+            如果传入某个字符串，会以这个字符串作为连接符使用。
+            console.log(arr.join("-"));
+            如果只需要元素的值进行连接，不需要分隔符，传入空字符串即可
+
+            Date对象
+            默认表示当前时间:
+            var date = new Date();
+            console.log(date);
+            传入参数可以表示具体的某一个时间
+            如果传入的参数是数值类型，月份从0开始
+
+            用于获取日期对象中的某个部分
+            var date = new Date();
+            获取年:
+            console.log(date.getFullYear());
+            获取月:  月份是从0开始的
+            console.log(date.getMonth());
+            获取日:
+            console.log(date.getDate());
+
+            获取小时:
+            console.log(date.getHours());
+            获取分钟:
+            console.log(date.getMinutes());
+            获取秒:
+            console.log(date.getSeconds());
+            获取毫秒: 范围0-999
+            console.log(date.getMilliseconds());
+</head>
+<body>
+
+</body>
+</html>

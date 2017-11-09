@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        //1 分析计算两个数最大值和计算三个数最大值的函数执行过程，使用文字描述。
+        function getMax1(num1, num2) {
+            return num1 > num2 ? num1 : num2;
+        }
+        function getMax2(a, b, c) {
+            var max = getMax1(a, b);
+            return getMax1(max, c);
+        }
+        console.log(getMax2(100, 200, 300));
+        //1.执行第16行代码让getMax2的实参赋值给形参
+        //2.执行第13行代码将getMax2的的的实参a和b赋值给getMax1做实参运行函数并得到返回值
+        //3将返回值赋值给max,然后执行第14行代码，再以max和c作为getMax1的实参执行函数并得到返回值
+
+        //2 求阶乘 与 求1到n之间所有数的阶乘的和
+//        var n=9;
+        function  jc(n){
+            var che=1;
+                for (var j = 1; j <=n; j++) {
+                    che*=j;
+                }
+            return che;
+        }
+        jc(9);
+        //阶乘的和
+          function jcSum(n){
+            var sum=0;
+            for (var i = 1; i <=n; i++) {
+                for (var j = 1; j <=i; j++) {
+                    sum+=i*j;
+                }
+            }
+            return sum;
+        }
+        console.log(jcSum(9));
+
+        //3 求一组数中的最大值
+        //var arr=[1, 2, 3, 4, 5, 6, 7,89];
+            function getMax3(arr) {
+                var max = arr[0];
+                for (var i = 0; i < arr.length; i++) {
+                    if (max < arr[i]) {
+                        max = arr[i]
+                    }
+                }
+                return max;
+            }
+            console.log(getMax3([1, 2, 3, 4, 5, 6, 7,89]));
+        //4 对数组排序，从小到大
+        //var arr=[1,5,6,4,3,2,7,8,9];
+            function paiXu(arr){
+                //冒泡排序
+                for (var i = 1; i <arr.length; i++) {
+                    var count=0;
+                    for (var j = 0; j <= arr.length-i; j++) {
+                        if(arr[j]>arr[j+1]){
+                            var temp=arr[j];
+                            arr[j]=arr[j+1];
+                            arr[j+1]=temp;
+                            count++;
+                        }
+                    }
+                    if(count==0){
+                        break;
+                    }
+                }
+                return arr;
+            }
+            console.log(paiXu([1, 5, 6, 4, 3, 2, 7, 8, 9]));
+
+
+        //5 判断一个数是否是质数
+            //var num=parseInt(prompt("请输入一个数"));
+        function zhiShu(num){
+            //质数的判断条件是只能被1和他本身整除，所以取到除1和他本身之外的数再和他取余，看余数是否为0
+            for (var i = 2; i < num; i++) {
+                //r如果为0则跳出循环
+                if(num%i==0){
+                    break;
+                }
+            }
+            //在利用循环的特性，看循环是否执行完
+            if(num==i||num==1){
+                console.log("他是一个质数");
+            }else{
+                console.log("他不是质数");
+            }
+        }
+        zhiShu(parseInt(prompt("请输入一个数")));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

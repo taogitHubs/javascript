@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //求一组数中的所有数的和还有平均值
+        //var arr = [6, 5, 3, 7, 8, 9, 1, 3, 65, 3, 32, 1];
+        ////先定义一个变量来存放和
+        //var sum=0;
+        ////数组的遍历
+        //for (var i = 0; i < arr.length; i++) {
+        ////计算数组的和
+        //sum+=arr[i];
+        //}
+        ////数组的和除以数组的长度为平均值
+        //console.log(sum / arr.length);
+        //console.log(sum);
+        //将1-100之间所有的整数放入到数组中
+        //先定义一个空的数组
+        //var arr=[];
+        ////打印出1-100之间的数
+        //for (var i = 1; i <=100; i++) {
+        //    //将整数放入数组中
+        //    arr[arr.length]=i;
+        //}
+        //console.log(arr);
+        //将1-100之间可以被3整除的数放入到数组中
+        //定义一个数组来存放
+           //var arr = [];
+           ////打印1到100的数
+           //for (var i = 0; i < 100; i++) {
+           //    //判断是否能被3整除
+           //    if (i % 3 == 0) {
+           //        arr[arr.length]=i;
+           //    }
+           //}
+           //console.log(arr);
+        //求一组数中的最大值
+            // var arr=[5,5,9,8,7,6,3,1,5];
+            // //定义一个数组
+            // var max=arr[0];
+            // //获取数组中的所有的压缩与max进行比较
+            // for (var i = 0; i < arr.length; i++) {
+            //     if(arr[i]>max){
+            //         max=arr[i];
+            //     }
+            // }
+            // console.log(max);
+        //求一组数中的最小值，以及所在位置(取出最小值的索引值)
+            //var arr=[6, 4, 1, 7, 3, 5, 8, 2, 9, 22];
+            ////定义一个变量保存最小值
+            //var min=arr[0];
+            //var count=0;//记录索引值
+            //for (var i = 0; i < arr.length; i++) {
+            //    if(arr[i]<min){
+            //        min=arr[i];
+            //        count=i;
+            //    }
+            //}
+            //console.log(min,count);
+        //将字符串数组用|或其他符号分割
+            //var arr=["张三","李四","王五","赵六"];
+            //var count="|"//存放分隔符
+            //var result=arr[0];//存放分割后的数组
+            ////遍历数组
+            //for (var i = 1; i < arr.length; i++) {
+            //    result+=count+arr[i]
+            //}
+            //console.log(result);
+        //要求将数组中不为0的值存入一个新的数组，生成新的数组
+            //var arr = [1, 6, 0, 4, 2, 0, 7, 8, 0, 9, 3, 0, 5, 1, 2];
+            ////新建一个数组累存储筛选后的数组
+            //var arr1=[];
+            ////遍历数组
+            //for (var i = 0; i < arr.length; i++) {
+            //    //判断是否为0
+            //    if(arr[i]!=0){
+            //        arr1[arr1.length]=arr[i];
+            //    }
+            //}
+            //console.log(arr1);
+        //翻转数组
+          //方式一：
+            //var arr=["a","b","c","d","e"]
+            ////定义一个新数组存放翻转后的元素
+            //var arr1=[];
+            ////反向打印遍历
+            //for (var i = arr.length-1; i >=0; i--) {
+            //    arr1[arr1.length]=arr[i];
+            //}
+            //console.log(arr1);
+        //方式二:
+            //var arr=["a","b","c","d","e"];
+            ////遍历数组arr，将数组arr的首尾数据进行交换
+            //for (var i = 0; i <= arr.length/2-1; i++) {//条件也可用i < parseInt(arr.length / 2)
+            //    var temp=arr[i];
+            //    arr[i]=arr[arr.length-i-1];
+            //    arr[arr.length-i-1]=temp;
+            //}
+            //console.log(arr);
+        //冒泡排序
+            var arr=[5, 7, 4, 8, 3, 6, 2, 9, 1];
+            //外部循环
+            for (var i = 1; i < arr.length; i++) {
+                var count=0;
+                //内部循环
+                for (var j = 0; j < arr.length; j++) {
+                    //判断前一项与后一项的大小
+                    if(arr[j]>arr[j+1]){
+                        var temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                        count++;//记录循环的次数
+                    }
+                }
+                //当count等于0 时说明排序完毕，将循环结束即可
+                if(count==0){
+                    break;//跳出循环
+                }
+            }
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

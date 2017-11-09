@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //找到不确定操作的执行位置设置假设条件
+        //对假设的条件进行验证
+        //验证完毕后根据最终得到的假设结果进行判断
+        var arr = [1,2,3,5,4];
+        var count=0;
+        //外层循环控制比較的轮数
+        for (var i = 0; i < arr.length - 1; i++) {
+            count++;
+            //内层循环控制每一轮中比較的次数
+            var a=false;
+            for (var j = 0; j < arr.length - 1 - i; j++) {
+                //比較大小
+                if (arr[j] > arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }else{
+                    a=true;
+                }
+
+            }
+            if(a==true){
+                break;
+            }
+        }
+        console.log(arr,count);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

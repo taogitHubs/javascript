@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function renWu(shengao,age,name){
+            var leiHao=new Object();
+            //属性
+            leiHao.shengao=shengao;
+            leiHao.age=age;
+            leiHao.name=name;
+            //方法
+            leiHao.shangke=function(){
+                console.log("上课睡觉");
+            };
+            leiHao.xiake=function(){
+                console.log("下课学习");
+            };
+            return leiHao;
+        }
+        var ren=renWu(150,20,"雷浩");
+        var ren2=renWu(170,20,"张涛")
+        console.log(ren);
+        console.log(ren2);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

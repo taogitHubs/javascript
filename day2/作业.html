@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //判断一个年份是闰年还是平年 ：
+        //定义一个年份
+        var nf=prompt("请输入年份");
+        //if语句写条件
+        if (nf % 400 == 0 || nf % 4 == 0 && nf % 100 != 0){
+            alert("它是个瑞年");
+        }else{
+            alert("它是平年");
+        }
+        //判断一个人的年龄是否满18岁(是否成年)
+        //输入一个年龄
+        var age=prompt("请输入年龄");
+        //判断这个年龄所在区间
+       if(age<0||age>100){
+             alert("输入不合法");
+        }else if(age>=18){
+            alert("已满18岁，成年");
+        }else{
+            alert("未成年");
+        }
+        //要求用户输入用户名和密码，并进行验证，如果不是admin和888888则要求再次输入。
+        var yh=prompt("输入用户名");
+        var mm=prompt("输入密码");
+        //验证用户名密码是否正确
+            while (yh != "admin" || mm != "888888") {
+                //    若不正确则提示不正确
+                alert("密码不正确，请从新输入");
+                //      并且让用户从新输入
+                yh = prompt("输入用户名", "");
+                mm = prompt("输入密码", "");
+            }
+       // 同时求1-100之间所有偶数和奇数的和
+        //先定义两个变量放值
+       var even=0;
+       var odd=0;
+       for(var i=0;i<=100;i++){
+        //  判断这个数是否为偶数
+          if(i%2 == 0){
+               even+=i;
+           }else{
+               odd+=i;
+          }
+       }
+        console.log("奇数偶数");
+       console.log(odd,even);
+
+
+        document.write("打印正方形");
+        document.write("<br>");
+        for (var i = 0; i < 5; i++) {
+            //在每一行打印5个*
+            for (var j = 0; j < 5; j++) {
+                document.write("* ");
+            }
+            //打印完5个后换行
+            document.write("<br>");
+        }
+        document.write("打印直角三角形");
+        for(var i=0;i<10;i++){
+            //每一行打印的*数为i
+            for(var j=0; j<i ;j++){
+                document.write("* ");
+            }
+            //打印完换行
+            document.write("<br>")
+        }
+//        本金10000元存入银行，年利率是千分之三，每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少？
+        var bj=10000;
+        for(i=0;i<5;i++){
+           // bj = bj * 0.003 + bj;
+            bj*=1.003;
+        }
+        console.log("5年后的本金是:");
+        console.log(bj);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

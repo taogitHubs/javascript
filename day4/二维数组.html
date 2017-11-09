@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var arr=[10,20,30,[50,60,70,80]];
+        //console.log(arr[1]);//20
+        //console.log(arr[3][2]);//70
+        for (var i = 0; i < arr.length; i++) {
+            //if(Array.isArray(arr[i])){
+            //if(arr[i] instanceof Array){
+            if(Object.prototype.toString.call(arr[i])=="[object Array]"){
+                for (var j = 0; j < arr[i].length; j++) {
+                    console.log(arr[i][j]);
+                }
+            }else{
+                console.log(arr[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

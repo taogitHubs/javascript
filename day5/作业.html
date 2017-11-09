@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+       //var a = 18;
+       //f1();
+       //function f1(){
+       //    //var a;
+       //    //----------
+       //    var b=9;
+       //    console.log(a);//undefined
+       //    console.log(b);//9
+       //    var a = '123';
+       //}
+        //f1();
+       //先调用函数，所以整个函数体往上走则先输出函数体中的a，b，c
+       //var b;
+       //var c;
+        //console.log(c);//9
+        //console.log(b);//9
+        //console.log(a);//未声明
+        //function f1(){
+        //    var a = b = c = 9;
+        //    //var a=9;
+        //    //    b=9;
+        //    //    c=9;
+        //    //发现b和c都未声明所以在全局变量中进行声明，但都赋了值所以b=9,c=9
+        //    console.log(a);//9
+        //    console.log(b);//9
+        //    console.log(c);//9
+        //}
+     //["a", "b", "b", "d", "a", "e", "c", "b", "a", "d", "d", "b", "a", "c", "e"]
+      // quChong(["a", "b", "b", "d", "a", "e", "c", "b", "a", "d", "d", "b", "a", "c", "e"]);
+       function quChong(arr){
+           //数组去重
+           var arr1=[arr[0]];
+           for (var i = 0; i < arr.length; i++) {
+               var count=0;
+               for (var j = 0; j < arr1.length; j++) {
+                   if(arr[i]==arr1[j]){
+                       count++
+                   }
+               }
+               if(count==0){
+                   arr1[arr1.length]=arr[i];
+               }
+           }
+           return arr1;
+       }
+        function jiShu(arr){
+            var arr1=quChong(arr);
+            var arr2=[];//定义一个数组来存放统计的数据
+            for (var n = 0; n < arr1.length; n++){
+                var temp=0;
+                for (var x = 0; x < arr.length; x++) {
+                    //判断arr1中的每个数和arr中的数是否相同，相同就+1
+                    if(arr1[n]==arr[x]){
+                        temp++;
+                    }
+                }
+                //内循环执行完说明arr1中的一个数和arr中的数比较完成，这时记录temp值就是这个数在arr中的重复次数
+                arr2[arr2.length]=arr1[n]+":"+temp;
+            }
+            return arr2;
+        }
+        console.log(jiShu(["a", "b", "b", "d", "a", "e", "c", "b", "a", "d", "d", "b", "a", "c", "e"]));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
